@@ -1,0 +1,58 @@
+
+--obfuscated by gptobfuscator, love by mellonioisback.
+local function obfuscate()
+    local a={["10469493270"]="13532600125",["10469630950"]="13296577783",["15955393872"]="15943915877",["10470104242"]="14351441234",["10479335397"]="12509505723",["10469639222"]="16139108718",["10470389827"]="0",["10471336737"]="12296882427",["12510170988"]="12618271998",["12447707844"]="17086594393",["10466974800"]="18181589384",["12983333733"]="13801090462",["13927612951"]="18450480375"};local b="rbxassetid://2201067635";
+    
+    local function c()local d=game:GetService("StarterGui");
+        d:SetCore("SendNotification",{Title="Replacements Tsb Animations Script",Text="Made by mellonioisback :D",Duration=5});end;
+
+    local function e(f)local g=f:FindFirstChildOfClass("Humanoid");
+        if g then g.AnimationPlayed:Connect(function(h)
+                local i=h.Animation.AnimationId:gsub("rbxassetid://","");
+                if a[i]then h:Stop();if a[i]~="0"then local j=Instance.new("Animation");
+                    j.AnimationId="rbxassetid://"..a[i];
+                    local k=g:LoadAnimation(j);
+                    k:Play();
+                    local l=f:FindFirstChild("AnimationBackgroundSound");
+                    if not l then l=Instance.new("Sound");
+                        l.Name="AnimationBackgroundSound";
+                        l.SoundId=b;
+                        l.Looped=true;
+                        l.Parent=f:FindFirstChild("HumanoidRootPart")or f;
+                        l:Play();
+                    end;
+                end;
+            end;
+        end);
+    end;
+end;
+
+local m=game.Players.LocalPlayer;
+
+local function x()
+    local n = 0;
+    for i = 1, 100 do
+        n = n + i;
+    end;
+    return n;
+end;
+
+local function y()
+    local o = 0;
+    for i = 1, 50 do
+        o = o + i * 2;
+    end;
+    return o;
+end;
+
+m.CharacterAdded:Connect(e);
+
+if m.Character then 
+    e(m.Character);
+end;
+
+c();
+x();
+y();
+end
+obfuscate()
